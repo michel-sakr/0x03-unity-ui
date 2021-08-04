@@ -17,19 +17,19 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            rigidbody.AddForce(speed * Time.deltaTime, 0, 0);
+            rigidbody.AddForce(0, 0, speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            rigidbody.AddForce((-speed) * Time.deltaTime, 0, 0);
+            rigidbody.AddForce(0, 0, (-speed) * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            rigidbody.AddForce(0, 0, speed * Time.deltaTime);
+            rigidbody.AddForce(speed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            rigidbody.AddForce(0, 0, (-speed) * Time.deltaTime);
+            rigidbody.AddForce((-speed) * Time.deltaTime, 0, 0);
         }
 
     }
