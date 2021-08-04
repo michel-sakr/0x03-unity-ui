@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public new Rigidbody rigidbody;
+    public float speed = 200f;
+    // // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            rigidbody.AddForce(speed * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            rigidbody.AddForce((-speed) * Time.deltaTime, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            rigidbody.AddForce(0, 0, speed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            rigidbody.AddForce(0, 0, (-speed) * Time.deltaTime);
+        }
+
     }
 }
