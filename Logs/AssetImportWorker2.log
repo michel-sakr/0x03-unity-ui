@@ -462,3 +462,19 @@ Received Import Request.
 Start importing Assets/Prefabs/Trap.prefab using Guid(cf7e747a726e4fd488251b2c59b8a949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fd7b3bce7d8ad671fd6155b0eb42700') in 0.145048 seconds 
   Import took 0.201447 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 151.333882 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dca19fe2c50263e0b56d4a846b3aaac') in 0.038934 seconds 
+  Import took 0.081750 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.324433 seconds.
+  path: Assets/Prefabs/Trap.prefab
+  artifactKey: Guid(cf7e747a726e4fd488251b2c59b8a949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Trap.prefab using Guid(cf7e747a726e4fd488251b2c59b8a949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d71a743d39bdaa54721c098d8da076e') in 0.017622 seconds 
+  Import took 0.048655 seconds .
+
