@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public new Rigidbody rigidbody;
     public float speed = 200f;
+    private int score = 0;
     // // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log("Score: " + score);
     }
 
     // Update is called once per frame
@@ -32,5 +33,15 @@ public class PlayerController : MonoBehaviour
             rigidbody.AddForce((-speed) * Time.deltaTime, 0, 0);
         }
 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            score++;
+            Debug.Log("Score: " + score);
+            other.gameObject.SetActive(false);
+        }
     }
 }
