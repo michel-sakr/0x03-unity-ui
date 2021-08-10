@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,10 +10,27 @@ public class PlayerController : MonoBehaviour
     public float speed = 200f;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
+    public Text healthText;
+    public Text winLose;
+    public Image winLoseBG;
+    public GameObject midFrame;
     // // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Score: " + score);
+
+    }
+
+    void Update()
+    {
+        if (health == 0)
+        {
+            winLose.color = Color.white;
+            winLose.text = "Game Over!";
+            winLoseBG.color = Color.red;
+            midFrame.SetActive(true);
+            StartCoroutine(LoadScene(3));
+        }
     }
 
     // Update is called once per frame
@@ -41,13 +60,35 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         {
             score++;
-            Debug.Log("Score: " + score);
+            SetScoreText();
             other.gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("Trap"))
         {
             health--;
-            Debug.Log("Health: " + health);
+            SetHealthText();
         }
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            winLose.color = Color.black;
+            winLose.text = "YOU WIN!";
+            winLoseBG.color = Color.green;
+            midFrame.SetActive(true);
+        }
+    }
+
+    void SetScoreText() {
+        scoreText.text = "Score: " + score;
+    }
+
+    void SetHealthText() {
+        healthText.text = "Health: " + health;
+    }
+
+    IEnumerator LoadScene(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        health = 5;
+        score = 0;
     }
 }
