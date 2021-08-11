@@ -2083,7 +2083,8 @@ MonoBehaviour:
   scoreText: {fileID: 1548951817}
   healthText: {fileID: 1537389548}
   winLose: {fileID: 2061467878}
-  midFrame: {fileID: 19823605}
+  winLoseBG: {fileID: 19823605}
+  midFrame: {fileID: 19823603}
 --- !u!1 &499031656
 GameObject:
   m_ObjectHideFlags: 0
