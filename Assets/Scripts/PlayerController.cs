@@ -74,21 +74,32 @@ public class PlayerController : MonoBehaviour
             winLose.text = "YOU WIN!";
             winLoseBG.color = Color.green;
             midFrame.SetActive(true);
+            StartCoroutine(NextLevel());
         }
     }
 
-    void SetScoreText() {
+    void SetScoreText()
+    {
         scoreText.text = "Score: " + score;
     }
 
-    void SetHealthText() {
+    void SetHealthText()
+    {
         healthText.text = "Health: " + health;
     }
 
-    IEnumerator LoadScene(float seconds) {
+    IEnumerator LoadScene(float seconds)
+    {
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         health = 5;
         score = 0;
+    }
+
+    IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        health = 5;
     }
 }
